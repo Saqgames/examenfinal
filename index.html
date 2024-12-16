@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saqgames Company</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
+
+    <!-- Link Boxicon -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <!-- Link Fuente -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="contenedor_maestro">
+        <!-- Sección Principal -->
+        <header class="portada">
+            <div class="portada__contenido">
+                <h1>Saqgames Company</h1>
+                <p>Diseño Web</p>
+                <a href="#cotizar" class="portada__anclaje">
+                    Cotizar web
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+            </div>
+            
+            <!-- Redes Sociales -->
+            <div class="rrss">
+                <a href="https://www.instagram.com/saqgames_yt/" target="_blank"><i class="bx bxl-instagram"></i></a>
+                <a href="https://wa.me/+56933553698" target="_blank"><i class="bx bxl-whatsapp"></i></a>
+                <a href="https://www.behance.net/sebastianquidel" target="_blank"><i class="bx bxl-behance"></i></a>
+            </div>
+        </header>
+
+        <!-- Sección del Formulario -->
+        <section class="contacto" id="cotizar">
+            <div class="formulario__contenedor">
+                <div class="texto__formulario">
+                    <h2 class="cotizar-titulo">COTIZAR WEB</h2> <!-- Título más pequeño para Cotizar Web -->
+                    <p>Recuerda que mientras más <b>específico</b> seas en tu explicación, el presupuesto tendrá un rango más acorde a tus necesidades y podrás tener una <b>respuesta más rápida</b>.</p>
+                </div>
+                <form class="formulario" action="enviar.php" method="POST">
+                    <div>
+                        <label for="nombre">Nombre</label>
+                        <input id="nombre" type="text" name="nombre" placeholder="Tu nombre" required>
+                    </div>
+                    <div>
+                        <label for="telefono">Whatsapp</label>
+                        <input id="telefono" type="tel" name="telefono" placeholder="Tu WSP con código de área" required>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input id="email" type="email" name="email" placeholder="Tu correo electrónico" required>
+                    </div>
+                    <div>
+                        <label for="selecciona">Tipo de web</label>
+                        <select name="tipoweb" id="selecciona">
+                            <option value="onepage" selected>One Page</option>
+                            <option value="corporativa">Corporativa</option>
+                            <option value="ecommerce">e-Commerce</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="mensaje">Mensaje</label>
+                        <textarea name="mensaje" id="mensaje" placeholder="Describe tu idea"></textarea>
+                    </div>
+                    <input type="submit" value="COTIZAR">
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

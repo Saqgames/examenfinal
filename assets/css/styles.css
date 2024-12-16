@@ -1,0 +1,251 @@
+/* Variables en :root */
+:root {
+    --color-primario: #28A745;
+    --color-secundario: #007BFF;
+    --color-blanco: #FFFFFF;
+    --color-negro: #343A40;
+    --color-gris: #CED4DA;
+    --color-fondo: #F8F9FA;
+    --color-titulo: #FF5733; /* Color destacado para el texto principal */
+    --ancho-formulario: 90%;
+    --max-ancho-formulario: 600px;
+}
+
+/* Estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    list-style: none;
+    scroll-behavior: smooth;
+    text-decoration: none;
+}
+
+/* Contenedor principal con scroll snap */
+.contenedor_maestro {
+    background-color: var(--color-fondo);
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    position: relative;
+}
+
+/* Secciones con scroll snap */
+header.portada, 
+section.contacto {
+    scroll-snap-align: start;
+    height: 100vh;
+    padding: 0;
+}
+
+/* Sección de la portada (CSS Grid) */
+header.portada {
+    background-image: linear-gradient(
+        hsla(120, 80%, 50%, 0.7),
+        hsla(200, 70%, 50%, 0.7)
+    ), url(../img/Duki-1.webp);
+    background-size: cover;
+    background-position: 0%;
+    background-attachment: fixed;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    animation: fondobanner 10s ease-in-out infinite;
+}
+
+/* Títulos en la portada */
+header.portada h1 {
+    font-size: 3rem; /* Reducido tamaño del texto */
+    color: var(--color-titulo); /* Color destacado para el título */
+    text-align: left; /* Alineado a la izquierda */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Agrega sombra para que el texto resalte */
+    padding-left: 2rem; /* Espaciado desde la izquierda */
+}
+
+header.portada p {
+    font-size: 1.8rem; /* Reducido subtítulo */
+    color: var(--color-blanco);
+    text-align: left;
+    margin-top: 1rem;
+    padding-left: 2rem; /* Alineado a la izquierda */
+}
+
+/* Enlace de anclaje */
+header.portada a {
+    font-size: 1.5rem; /* Reducido tamaño del enlace */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-blanco);
+    margin-top: 7rem; /* Bajar aún más el enlace */
+}
+
+header.portada i {
+    font-size: 3.5rem;
+    animation: flotable-flecha 3s infinite;
+    color: var(--color-blanco);
+}
+
+/* Animaciones */
+@keyframes fondobanner {
+    0% { background-position: 10% 30%; }
+    50% { background-position: 85% 90%; }
+    100% { background-position: 10% 30%; }
+}
+
+@keyframes flotable-flecha {
+    0% { transform: translateY(-5px); }
+    50% { transform: translateY(5px); }
+    100% { transform: translateY(-5px); }
+}
+
+/* Redes Sociales rotadas y ubicadas más arriba */
+.rrss {
+    position: absolute;
+    top: 40%;
+    right: 0; 
+    transform: translateY(-50%) rotate(-90deg);
+    display: flex;
+    gap: 1rem;
+}
+
+.rrss a {
+    color: var(--color-negro);
+    font-size: 2rem;
+    transition: color 0.3s;
+}
+
+.rrss a:hover {
+    color: var(--color-primario);
+}
+
+/* Segunda diapositiva (Flexbox) */
+section.contacto {
+    background-color: #E9ECEF;
+    padding: 2rem 0;
+    background-image: linear-gradient(
+        hsla(200, 70%, 50%, 0.7),
+        hsla(120, 80%, 50%, 0.7)
+    ), url(../img/Duki-2.avif);
+    background-size: cover;
+    background-position: 0%;
+    background-attachment: fixed;
+    animation: fondobanner2 15s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Añadimos el efecto de movimiento a la imagen de la segunda diapositiva */
+@keyframes fondobanner2 {
+    0% { background-position: 0% 30%; }
+    50% { background-position: 85% 90%; }
+    100% { background-position: 0% 30%; }
+}
+
+/* Estilo para el título de Cotizar Web */
+section.contacto h2 {
+    font-size: 1.8rem; /* Reducido tamaño del texto */
+    color: var(--color-titulo); /* Color destacado para el título */
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para resaltar el texto */
+}
+
+/* Subtítulo en la sección de Cotizar Web */
+section.contacto p {
+    font-size: 1.2rem; /* Reducido tamaño del texto */
+    color: var(--color-blanco); /* Cambiado a blanco */
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Estilo del formulario */
+form.formulario {
+    background-color: var(--color-blanco);
+    width: var(--ancho-formulario);
+    max-width: var(--max-ancho-formulario);
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form.formulario h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--color-negro);
+}
+
+form.formulario p {
+    font-size: 1rem;
+    color: var(--color-negro);
+    margin-bottom: 20px;
+}
+
+form.formulario div {
+    margin-bottom: 15px;
+}
+
+form.formulario label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: var(--color-negro);
+}
+
+form.formulario input,
+form.formulario select,
+form.formulario textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--color-gris);
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+form.formulario input[type="submit"] {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+form.formulario input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #6C757D;
+}
+
+/* Media Queries para versión responsive */
+@media screen and (max-width: 768px) {
+    header.portada h1 {
+        font-size: 1.8rem; /* Reducir tamaño en pantallas pequeñas */
+    }
+
+    header.portada p {
+        font-size: 1.2rem; /* Reducir subtítulo */
+    }
+
+    section.contacto h2 {
+        font-size: 1.6rem; /* Reducir tamaño del título */
+    }
+
+    form.formulario {
+        width: 100%;
+    }
+}
+
